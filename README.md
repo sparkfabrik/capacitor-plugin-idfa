@@ -4,16 +4,35 @@
 
 ## Index
 
+- [Intro](#intro)
 - [Supported platform](#supported-platform)
 - [Installation](#installation)
 - [Android configuration](#android-configuration)
 - [Ionic configuration](#ionic-configuration)
 
+## Intro
+
+[Capacitor](https://capacitorjs.com/) provides a native mobile runtime and API layer for web apps. It allows mobile frontend frameworks (such as [Ionic Framework](https://ionicframework.com)) to access native device features.
+
+The **Advertising Identifier** ([IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager) on iOS, [AAID](https://developer.android.com/training/articles/ad-id) on Android) is a device-specific, unique, resettable ID for advertising that allows ddevelopers and marketers to track activity for advertising purposes.
+
+This npm module allows any mobile application that uses Capacitor to access the Advertising ID, following the OS specific definition and user permissions.
+
+The module output in the javascript framework is the following:
+
+```ts
+interface AdvertisingInfoResponse {
+  id: string; // the Advertising ID (or null if not defined/permitted)
+  isAdTrackingLimited: boolean; // the user defined permission to track
+}
+```
+
 ## Supported platform
 
 - Android
 - iOS
-- Web (the value is always null)
+
+*Note: the web version always returns null*
 
 ## Installation
 `npm install @sparkfabrik/capacitor-plugin-idfa`

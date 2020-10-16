@@ -1,6 +1,6 @@
 {
   "name": "@sparkfabrik/capacitor-plugin-idfa",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Get native IDFA or Advertising ID from iOS or Android device.",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
