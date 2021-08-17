@@ -8,6 +8,7 @@
 - [Supported platform](#supported-platform)
 - [Installation](#installation)
 - [Android configuration](#android-configuration)
+- [iOS configuration](#ios-configuration)
 - [Ionic configuration](#ionic-configuration)
 
 ## Intro
@@ -27,14 +28,19 @@ interface AdvertisingInfoResponse {
 }
 ```
 
+### Note
+
+In version 2.0 we switched to Capacitor 3.0 and there are breaking changes, so if you are on Capacitor 2.x don't upgrade or just use version 1.x
+
 ## Supported platform
 
 - Android
 - iOS
 
-*Note: the web version always returns null*
+_Note: the web version always returns null_
 
 ## Installation
+
 `npm install @sparkfabrik/capacitor-plugin-idfa`
 
 or
@@ -43,31 +49,36 @@ or
 
 ## Android configuration
 
-In file `android/app/src/main/java/**/**/MainActivity.java`, add the plugin to the initialization list:
-```java
-this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
-  [...]
-  add(com.sparkfabrik.capacitor.idfa.Idfa.class);
-  [...]
-}});
+_Nothing to add_
+
+## iOS configuration
+
+In `info.plist` make sure to add a description for the user permission request:
+
+```xml
+<key>NSUserTrackingUsageDescription</key>
+<string>...</string>
 ```
 
-## Ionic configuration
-```ts
-import { Plugins } from '@capacitor/core';
-import { AdvertisingInfoResponse } from '@sparkfabrik/capacitor-plugin-idfa';
+## Ionic app implementation
 
-const { Idfa } = Plugins;
+### How to use the module in your own Ionic app
+
+```ts
+import {
+  Idfa,
+  AdvertisingInfoResponse,
+} from '@sparkfabrik/capacitor-plugin-idfa';
 
 // Get advertising id.
 Idfa.getAdvertisingInfo()
-	.then((response: AdvertisingInfoResponse) => {
-		if (response.isAdTrackingLimited === true) {
-			console.error('Ads tracking not allowed by user.');
-		}
-		console.log(response.id);
-	})
-	.catch((err: Error) => {
-		console.error(err);
-	});
+  .then((response: AdvertisingInfoResponse) => {
+    if (response.isAdTrackingLimited === true) {
+      console.error('Ads tracking not allowed by user.');
+    }
+    console.log(response.id);
+  })
+  .catch((err: Error) => {
+    console.error(err);
+  });
 ```
