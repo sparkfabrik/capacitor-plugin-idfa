@@ -10,13 +10,6 @@ import AppTrackingTransparency
 @objc(Idfa)
 public class Idfa: CAPPlugin {
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.success([
-            "value": value
-        ])
-    }
-
     @objc func getAdvertisingInfo(_ call: CAPPluginCall) {
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { status in
