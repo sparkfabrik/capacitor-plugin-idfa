@@ -21,9 +21,9 @@ public class Idfa extends Plugin {
             ret.put("id", info.getId());
             ret.put("isAdTrackingLimited", info.isLimitAdTrackingEnabled());
         } catch (Exception e) {
-            Log.e("Idfa", Objects.requireNonNull(e.getMessage()));
+            Log.e("Idfa", e.getMessage());
             call.reject("Error getting aaid.", e);
         }
-        call.success(ret);
+        call.resolve(ret);
     }
 }

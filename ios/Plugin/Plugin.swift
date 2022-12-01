@@ -17,7 +17,7 @@ public class Idfa: CAPPlugin {
                     case .authorized:
                         // Tracking authorization dialog was shown
                         // and we are authorized
-                        call.success([
+                        call.resolve([
                             "id": ASIdentifierManager.shared().advertisingIdentifier.uuidString,
                             "isAdTrackingLimited": false
                         ])
@@ -35,7 +35,7 @@ public class Idfa: CAPPlugin {
                 }
             }
         } else {
-            call.success([
+            call.resolve([
                 "id": ASIdentifierManager.shared().advertisingIdentifier.uuidString,
                 "isAdTrackingLimited": false
             ])
