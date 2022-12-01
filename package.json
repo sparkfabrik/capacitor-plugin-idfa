@@ -1,6 +1,6 @@
 {
   "name": "@sparkfabrik/capacitor-plugin-idfa",
-  "version": "4.0.0",
+  "version": "3.0.1",
   "description": "Get native IDFA or Advertising ID from iOS or Android device.",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
@@ -25,25 +25,25 @@
   "author": "Sparkfabrik",
   "license": "MIT",
   "devDependencies": {
-    "@capacitor/android": "^4.3.0",
-    "@capacitor/core": "^4.3.0",
-    "@capacitor/docgen": "^0.0.10",
-    "@capacitor/ios": "^4.3.0",
+    "@capacitor/android": "^4.5.0",
+    "@capacitor/core": "^4.5.0",
+    "@capacitor/docgen": "^0.2.0",
+    "@capacitor/ios": "^4.5.0",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
-    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "eslint": "^7.11.0",
     "prettier": "~2.2.0",
     "prettier-plugin-java": "~1.0.0",
-    "release-it": "^14.11.5",
+    "release-it": "^15.5.0",
     "rimraf": "^3.0.2",
-    "rollup": "^2.32.0",
+    "rollup": "^2.78.0",
     "swiftlint": "^1.0.1",
-    "typescript": "~4.0.3"
+    "typescript": "~4.9.3"
   },
   "peerDependencies": {
-    "@capacitor/core": "^4.3.0"
+    "@capacitor/core": "^4.5.0"
   },
   "files": [
     "dist/",
