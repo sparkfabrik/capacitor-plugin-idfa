@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/%40sparkfabrik%2Fcapacitor-plugin-idfa.svg)](https://badge.fury.io/js/%40sparkfabrik%2Fcapacitor-plugin-idfa)
 
+## This plugin is deprecated! Please use [@capacitor-community/advertising-id](https://github.com/capacitor-community/advertising-id) instead.
+
 ## Index
 
 - [Intro](#intro)
